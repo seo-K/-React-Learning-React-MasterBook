@@ -1,9 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import MyComponet from './MyComponent';
+import MyComponent from './MyComponent';
+import Counter from './Counter';
+import Say from './Say';
 
 function App() {
-  return <MyComponet>리액트</MyComponet>;
+  // return <MyComponent favoriteNumber={1}>리액트</MyComponent>;
+  // return <Counter>리액트</Counter>;
+  return <Say />;
 }
 
 export default App;
