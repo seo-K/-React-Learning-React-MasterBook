@@ -1,22 +1,23 @@
 import React, { Component, useState } from 'react';
 import './ValidationSample.css';
 
+// 유효성 검사 샘플
 class ValidationSample extends Component {
   state = {
-    pssword: '',
+    password: '',
     clicked: false,
     validated: false,
   };
 
   handleChange = (e) => {
     this.setState({
-      password: e.targe.value,
+      password: e.target.value,
     });
   };
   handleButtonClick = (e) => {
     this.setState({
       clicked: true,
-      validated: this.state.password === '000',
+      validated: this.state.password === '0000',
     });
   };
 
