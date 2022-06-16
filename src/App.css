@@ -1,38 +1,368 @@
-.App {
-  text-align: center;
+@charset "utf-8";
+
+* {
+  color: #222;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*보편적 스타일링 reset.css*/
+html,
+body,
+div,
+span,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+address,
+pre,
+cite,
+form,
+fieldset,
+input,
+textarea,
+select,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+  border: 0 none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0 none;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  border: 0;
+}
+
+address,
+caption,
+strong,
+em,
+cite {
+  font-weight: normal;
+  font-style: normal;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+}
+blockquote,
+q {
+  quotes: '' '';
+}
+
+hr {
+  display: none;
+}
+
+/* HTML5 Boilerplate  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+img,
+video {
+  /*max-width:100%;*/
+  border: 0;
+  vertical-align: middle;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+img {
+  display: inline-block;
+  image-rendering: -moz-auto; /*firefox*/
+  image-rendering: -o-auto; /*opera*/
+  image-rendering: -webkit-optimize-contrast; /*webkit*/
+  image-rendering: auto;
+  -ms-interpolation-mode: nearest-neighbor;
+  -webkit-perspective: 1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+a {
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+select,
+label {
+  vertical-align: middle;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  vertical-align: middle;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+select {
+  text-transform: none;
+}
+
+select {
+  -webkit-appearance: none; /* 네이티브 외형 감추기*/
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: normal;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+  display: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-weight: normal;
+  letter-spacing: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+input[type='search'] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+}
+address {
+  font-style: normal;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.fix:before {
+  content: '';
+  display: block;
+}
+.fix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fefefe;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 3px;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+@media screen and (max-width: 900px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-family: 'Noto-R';
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+:root {
+  --main-color: #ff5f00;
 }
 
-.App-link {
-  color: #61dafb;
+::selection {
+  background: #222;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 더블클릭시 선택 기능 막기*/
+.what {
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
 }
+
+/* 
+.swiper-container{
+    position: relative;
+    overflow: hidden;
+} */
+
+/* 스와이퍼 */
+/* .swiper-slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* date custom */
+/* input[type="date"]{
+    height:calc( 100vw * ( 65/ 1920))
+}
+
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(../src/img/icon/icon_date.svg) no-repeat center center / contain;
+} */
+
+/* 아이폰 placeholder */
+/* input[type='date']:after {
+    color: #888;
+    content: attr(placeholder);
+ } */
+
+/* @media screen and (max-width: 900px) {
+    input[type="date"]{
+        height: calc(100vw * ( 65/ 428));
+    }
+ } */
