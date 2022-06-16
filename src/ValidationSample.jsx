@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import './ValidationSample.css';
+import React, { Component, useState } from "react";
+import "./ValidationSample.css";
 
 // 유효성 검사 샘플
 class ValidationSample extends Component {
@@ -12,7 +12,7 @@ class ValidationSample extends Component {
   input = React.createRef();
 
   state = {
-    password: '',
+    password: "",
     clicked: false,
     validated: false,
   };
@@ -25,7 +25,7 @@ class ValidationSample extends Component {
   handleButtonClick = (e) => {
     this.setState({
       clicked: true,
-      validated: this.state.password === '0000',
+      validated: this.state.password === "0000",
     });
 
     //(3)
@@ -44,9 +44,9 @@ class ValidationSample extends Component {
           className={
             this.state.clicked
               ? this.state.validated
-                ? 'success'
-                : 'failure'
-              : ''
+                ? "success"
+                : "failure"
+              : ""
           }
         />
         <button onClick={this.handleButtonClick}>검증하기</button>
