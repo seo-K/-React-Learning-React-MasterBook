@@ -95,11 +95,11 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
 }
 blockquote,
 q {
-  quotes: '' '';
+  quotes: "" "";
 }
 
 hr {
@@ -215,18 +215,18 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 }
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-input[type='search'] {
+input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -236,15 +236,15 @@ input::-moz-focus-inner {
   padding: 0;
 }
 button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
   *overflow: visible;
 }
-input[type='checkbox'] + label,
-input[type='radio'] + label {
+input[type="checkbox"] + label,
+input[type="radio"] + label {
   cursor: pointer;
 }
 
@@ -272,11 +272,11 @@ details summary::-webkit-details-marker {
 }
 
 .fix:before {
-  content: '';
+  content: "";
   display: block;
 }
 .fix:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -306,7 +306,7 @@ textarea::placeholder {
 @media screen and (max-width: 900px) {
   input::placeholder,
   textarea::placeholder {
-    font-family: 'Noto-R';
+    font-family: "Noto-R";
   }
 }
 
