@@ -325,12 +325,19 @@ header {
 
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header > a {
+  flex-shrink: 0;
   width: 200px;
   text-align: center;
   font-size: 1.5rem;
+}
+
+header .selected {
+  background: salmon;
+  font-weight: bold;
 }
 
 button,
@@ -339,4 +346,12 @@ input {
   border-radius: 10px;
 
   padding: 5px 10px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: calc(70vh);
 }
