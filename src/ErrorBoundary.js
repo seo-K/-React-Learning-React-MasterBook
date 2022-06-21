@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// 에러잡는 코드
 class ErrorBoundary extends Component {
   state = {
     error: false,
