@@ -1,37 +1,33 @@
 import React, { Component } from "react";
 
 import "./App.css";
-import MyComponent from "./MyComponent";
-import Counter from "./Counter";
-import Say from "./Say";
-import EventPractice from "./EventPractice";
-import EventPracticeFunction from "./EventPracticeFunction";
-import ValidationSample from "./ValidationSample";
-import ScrollBox from "./ScrollBox";
-import IterationSample from "./IterationSample";
+import LifeCycleSample from "./LifeCycleSample";
+import ErrorBoundary from "./ErrorBoundary";
 
+// 랜덤 색상을 생성합니다.
+function getRandomColor() {
+  return "#" + Math.floor(Math.random() + 16777215).toString(16);
+}
 class App extends Component {
-  scrollBox = React.createRef();
+  state = {
+    color: "#000000",
+  };
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor(),
+    });
+  };
 
   render() {
-    // return <MyComponent favoriteNumber={1}>리액트</MyComponent>;
-    // return <Counter>리액트</Counter>;
-    // return <Say />;
-    // return <EventPractice />;
-    // return <EventPracticeFunction />;
-    // return <ValidationSample />;
-    return <IterationSample />;
-
-    // return (
-    // <div>
-    //   <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-    //   {/* 아래도 맞지만 컴포넌트가 처음 렌더링될 때는 this.scrollBox 값이 undefined이므로 오류가 발생할 수 있으므로 화살표 함수 문법 사용 */}
-    //   {/* <button onClick={this.scrollBox.scrollToBottom}> */}
-    //   <button onClick={() => this.scrollBox.scrollToBottom()}>
-    //     맨 밑으로
-    //   </button>
-    // </div>
-    // );
+    return (
+      <div>
+        <button onClick={this.handleClick}>랜덤색상</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
+      </div>
+    );
   }
 }
 export default App;
