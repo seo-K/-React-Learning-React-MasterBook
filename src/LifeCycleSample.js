@@ -10,11 +10,11 @@ class LifeCycleSample extends Component {
 
   constructor(props) {
     super(props);
-    console.log("constructor");
+    console.log("constructor = 클래스 생성자 매서드");
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log("getDerivedStateFromProps");
+    console.log("getDerivedStateFromProps = props의 state 값을 넣을때");
 
     if (nextProps.color !== prevState.color) {
       return { color: nextProps.color };
@@ -23,17 +23,25 @@ class LifeCycleSample extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
+    console.log(
+      "componentDidMount = 컴포넌트가 웹 브라우저상에 나타난 후 호출하는 메서드",
+    );
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponetUpdate", nextProps, nextState);
+    console.log(
+      "shouldComponetUpdate = 컴포넌트의 리렌더링을 결정하는 메서드",
+      nextProps,
+      nextState,
+    );
     // 숫자의 마지막 자리가 '4' 라면 리렌더링하지 않습니다.
     return nextState.number % 10 !== 4;
   }
 
   componentWillUnmount() {
-    console.log("componentWillUnmount");
+    console.log(
+      "componentWillUnmount = 컴포넌트가 웹 브라우저상에서 사라지기 전에 호출하는 메서드",
+    );
   }
 
   handleClick = () => {
@@ -43,7 +51,9 @@ class LifeCycleSample extends Component {
   };
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log("getSnapshotBeforeUpdate");
+    console.log(
+      "getSnapshotBeforeUpdate = 컴포넌트의 변화를 DOM에 반영하기 바로 직전에 호출하는 메서드﻿",
+    );
     if (prevProps.color !== this.props.color) {
       return this.myRef.style.color;
     }
@@ -51,14 +61,18 @@ class LifeCycleSample extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("componentDidUpdate", prevProps, prevState);
+    console.log(
+      "componentDidUpdate  = 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드",
+      prevProps,
+      prevState,
+    );
     if (snapshot) {
       console.log("업데이트 되기 직전 색상", snapshot);
     }
   }
 
   render() {
-    console.log("render");
+    console.log("render = 랜더링 메서드");
 
     const style = {
       color: this.props.color,
