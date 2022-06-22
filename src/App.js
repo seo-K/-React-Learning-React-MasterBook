@@ -14,6 +14,11 @@ import IterationSample from "./map/IterationSample";
 import LifeCycleSample from "./livecycle/LifeCycleSample";
 import ErrorBoundary from "./livecycle/ErrorBoundary";
 
+// hook
+import HookCounter from "./hook/Counter";
+import InfoUseEffect from "./hook/InfoUseEffect";
+import Info from "./hook/Info";
+
 export default function App() {
   // REF
 
@@ -43,6 +48,10 @@ export default function App() {
   //         <LifeCycleSample color={this.state.color} />
   //       </ErrorBoundary>
   //     </div>
+
+  // HOOK INFO
+  const [visible, setVisible] = useState(false);
+
   return (
     <Routes>
       <Route path="/" element={<Header />}>
@@ -57,6 +66,7 @@ export default function App() {
         <Route path="/ref" element={<ValidationSample />} />
         <Route path="/ref-scroll" element={<ScrollBox />} />
         <Route path="/map" element={<IterationSample />} />
+
         <Route
           path="/lifecycle"
           element={
@@ -68,6 +78,20 @@ export default function App() {
             </div>
           }
         />
+        <Route path="/hook/counter" element={<HookCounter />} />
+        <Route
+          path="/hook/Info-useEffect"
+          element={
+            <div>
+              <button onClick={() => setVisible(!visible)}>
+                {visible ? "숨기기" : "보이기"}
+              </button>
+              <hr />
+              {visible && <InfoUseEffect />}
+            </div>
+          }
+        />
+        <Route path="/hook/Info-reducer" element={<Info />} />
       </Route>
     </Routes>
   );

@@ -59,6 +59,24 @@ export default function Header() {
         >
           LifeCycle
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/hook/counter"
+        >
+          Hook-Counter
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/hook/info-useEffect"
+        >
+          Hook-Info-useEffect
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/hook/Info-reducer"
+        >
+          Hook-Info-reducer
+        </NavLink>
       </header>
       <main>
         <Outlet />
