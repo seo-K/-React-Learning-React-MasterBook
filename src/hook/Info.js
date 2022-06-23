@@ -8,12 +8,12 @@ import useInputs from "./useinputs";
 //   };
 // }
 
-function reducer(state, action) {
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+// function reducer(state, action) {
+//   return {
+//     ...state,
+//     [action.name]: action.value,
+//   };
+// }
 
 const Info = () => {
   // const [state, dispatch] = useReducer(reducer, {

@@ -77,6 +77,12 @@ export default function Header() {
         >
           Hook-Info-reducer
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/hook/useMemo"
+        >
+          Hook-use-Memo
+        </NavLink>
       </header>
       <main>
         <Outlet />
