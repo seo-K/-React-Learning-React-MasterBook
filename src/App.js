@@ -22,6 +22,7 @@ import Average from "./hook/Average";
 
 // Sass
 import Sass from "./sass/SassComponent";
+import Css from "./sass/CSSModule";
 
 export default function App() {
   // REF
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/hook/Info-reducer" element={<Info />} />
         <Route path="/hook/useMemo" element={<Average />} />
         <Route path="/sass" element={<Sass />} />
+        <Route path="/css" element={<Css />} />
       </Route>
     </Routes>
   );

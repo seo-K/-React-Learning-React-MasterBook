@@ -89,6 +89,12 @@ export default function Header() {
         >
           Sass
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/css"
+        >
+          Css
+        </NavLink>
       </header>
       <main>
         <Outlet />
