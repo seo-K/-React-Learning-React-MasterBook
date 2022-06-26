@@ -95,6 +95,12 @@ export default function Header() {
         >
           Css
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/styled-component"
+        >
+          Styled-component
+        </NavLink>
       </header>
       <main>
         <Outlet />
