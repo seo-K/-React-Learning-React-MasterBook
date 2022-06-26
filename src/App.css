@@ -355,3 +355,7 @@ main {
 
   min-height: calc(70vh);
 }
+
+:local {
+  /* 스타일 */
+}

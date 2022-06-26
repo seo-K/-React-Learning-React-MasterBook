@@ -5,12 +5,19 @@
   padding: 1rem;
   color: white;
   font-size: 2rem;
+
+  // inverted 가 .wrapper 와 함께 사용 됐을 때만 적용
   &.inverted {
-    // inverted 가 .wrapper 와 함께 사용 됐을 때만 적용
     color: black;
     background: white;
     border: 1px solid black;
   }
+}
+
+.inverted {
+  color: black;
+  background: white;
+  border: 1px solid black;
 }
 
 /* 글로벌 CSS 를 작성하고 싶다면 */
