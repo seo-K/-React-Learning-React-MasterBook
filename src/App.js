@@ -20,6 +20,9 @@ import InfoUseEffect from "./hook/InfoUseEffect";
 import Info from "./hook/Info";
 import Average from "./hook/Average";
 
+// Sass
+import Sass from "./sass/SassComponent";
+
 export default function App() {
   // REF
 
@@ -94,6 +97,7 @@ export default function App() {
         />
         <Route path="/hook/Info-reducer" element={<Info />} />
         <Route path="/hook/useMemo" element={<Average />} />
+        <Route path="/sass" element={<Sass />} />
       </Route>
     </Routes>
   );

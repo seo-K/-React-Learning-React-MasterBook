@@ -83,6 +83,12 @@ export default function Header() {
         >
           Hook-use-Memo
         </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "selected" : "")}
+          to="/sass"
+        >
+          Sass
+        </NavLink>
       </header>
       <main>
         <Outlet />
