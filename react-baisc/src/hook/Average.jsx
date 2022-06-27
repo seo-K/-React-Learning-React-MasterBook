@@ -3,12 +3,18 @@ import { useRef } from "react";
 import { useState, useMemo, useCallback } from "react";
 import useInputs from "./useinputs";
 // 렌더링 성능 최적화 함수
+// -> 값이 업데이트 되지않을때 (prosp 값의 변화가 없음)
+// -> 원래는 리렌더링시에 모든 함수가 실행되지만
+// -> useMemo/useCallback 함수 사용시 [] 파라미터 안의 값이 변견되기 전까지는
+//  Virtual DOM 리렌더링 No / 컴포넌트의 결과물을 재사용 및 최적화
 
 // [useMemo]
+// 특정 결과값 재사용
 // 함수형 컴포넌트 내부에서 발생하는 연산을 최적화할 수 있음.
-// 숫자, 문자열, 객체 같은 일반값 재사용시  useMemo
+// 숫자, 문자열, 객체 같은 일반값 재사용시 useMemo
 
 // [useCallback]
+// 특정 함수 재사용
 //  useMemo로 함수를 반환하는 과정에서 더 편리한 hook
 // 함수 재사용시 useCallback
 

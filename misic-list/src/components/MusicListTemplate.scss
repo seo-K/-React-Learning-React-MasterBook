@@ -1,0 +1,106 @@
+.wrap {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .phone-wrap {
+        display: flex;
+        flex-direction: column;
+
+        width: 500px;
+        height: 1000px;
+
+        margin: auto;
+
+        border-radius: 30px;
+        border: 8px double #eee;
+
+        background-color: #fff;
+    }
+
+    .notch {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 450px;
+        height: 40px;
+        margin: 0 auto;
+
+        .time {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .util {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+
+            flex: 1;
+
+            & > div {
+                flex-shrink: 0;
+
+                display: flex;
+                align-items: center;
+
+                margin-left: 4px;
+            }
+
+            .signal-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .wifi-icon {
+                width: 20px;
+                height: 20px;
+            }
+            .battery-icon {
+                width: 20px;
+                height: 20px;
+
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 450px;
+        height: 50px;
+        margin: 0 auto;
+
+        .icon-wrap {
+            display: flex;
+            align-items: center;
+
+            width: 20px;
+            height: 20px;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            font-size: 20px;
+
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 800px;
+        border: 2px solid #444;
+        border-radius: 30px;
+
+        margin-top: auto;
+    }
+}

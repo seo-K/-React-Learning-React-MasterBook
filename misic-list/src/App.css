@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+    font-family: "Roboto Mono", monospace;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #fff;
+    color: #222;
+    font: 500 calc(100vw * (16 / 428)) "Pop", sans-serif;
+}
+
+/*보편적 스타일링 reset.css*/
+* {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+div,
+span,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+address,
+pre,
+cite,
+form,
+fieldset,
+input,
+textarea,
+select,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+fieldset,
+img,
+abbr,
+acronym {
+    border: 0 none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 0 none;
+}
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    border: 0;
+}
+
+address,
+caption,
+strong,
+em,
+cite {
+    font-weight: normal;
+    font-style: normal;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+blockquote,
+q {
+    quotes: "" "";
+}
+
+hr {
+    display: none;
+}
+
+/* HTML5 Boilerplate  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+img,
+video {
+    /*max-width:100%;*/
+    border: 0;
+    vertical-align: middle;
+}
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+    /*firefox*/
+    /* image-rendering: -moz-auto; */
+    /*opera*/
+    /* image-rendering: -o-auto; */
+    /*webkit*/
+    /* image-rendering: -webkit-optimize-contrast; */
+    /* image-rendering: auto;
+  -ms-interpolation-mode: nearest-neighbor;
+  -webkit-perspective: 1; */
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+ul,
+ol,
+dl {
+    list-style: none;
+}
+a {
+    display: block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input,
+select,
+label {
+    vertical-align: middle;
+}
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    vertical-align: middle;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+button,
+input {
+    line-height: normal;
+}
+button,
+select {
+    text-transform: none;
+}
+
+select {
+    -webkit-appearance: none; /* 네이티브 외형 감추기*/
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: normal;
+    letter-spacing: normal;
+    cursor: pointer;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+    display: none;
+}
+select {
+    color: #000000;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    font-weight: normal;
+    letter-spacing: normal;
+    -webkit-tap-highlight-color: transparent;
+    color: #000;
+}
+
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+    color: #000;
+}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    cursor: pointer;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+progress {
+    /* Reset the appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Get rid of the default border in Firefox/Opera. */
+    border: none;
+
+    /* Progress bar container for Firefox/IE10+ */
+    background-color: transparent;
+}
+
+.fix:before {
+    content: "";
+    display: block;
+}
+.fix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #fefefe;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 3px;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+::selection {
+    background: #222;
+    color: #fff;
+}
