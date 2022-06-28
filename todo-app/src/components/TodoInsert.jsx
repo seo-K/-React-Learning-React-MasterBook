@@ -1,7 +1,6 @@
 import React from 'react';
-import { useCallback } from 'react';
-import { useState } from 'react';
-import { MdAdd, MdOutlineSettingsSystemDaydream } from 'react-icons/md';
+import { useCallback, useState } from 'react';
+import { MdAdd } from 'react-icons/md';
 import './TodoInsert.scss';
 
 function TodoInsert({ onInsert }) {
