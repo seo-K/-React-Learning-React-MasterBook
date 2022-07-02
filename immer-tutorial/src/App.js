@@ -13,7 +13,6 @@ import produce from "immer";
 //   // 바꾸고 싶은 값 바꾸기
 //   draft.somewhere.deep.inside = 5;
 // })
-
 const App = () => {
     const nextId = useRef(1);
     const [form, setForm] = useState({ name: "", username: "" });
@@ -26,10 +25,15 @@ const App = () => {
     const onChange = useCallback(
         (e) => {
             const { name, value } = e.target;
-            setForm({
-                ...form,
-                [name]: [value],
-            });
+            setForm(
+                produce((draft) => {
+                    draft[name] = value;
+                })
+            );
+            // setForm({
+            //     ...form,
+            //     [name]: [value],
+            // });
         },
         [form]
     );
