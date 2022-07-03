@@ -5,7 +5,7 @@ import useInputs from "./useinputs";
 // 렌더링 성능 최적화 함수
 // -> 값이 업데이트 되지않을때 (prosp 값의 변화가 없음)
 // -> 원래는 리렌더링시에 모든 함수가 실행되지만
-// -> useMemo/useCallback 함수 사용시 [] 파라미터 안의 값이 변견되기 전까지는
+// -> useMemo/useCallback 함수 사용시 [] 파라미터 안의 값이 변경되기 전까지는
 //  Virtual DOM 리렌더링 No / 컴포넌트의 결과물을 재사용 및 최적화
 
 // [useMemo]

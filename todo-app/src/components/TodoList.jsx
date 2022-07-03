@@ -5,7 +5,7 @@ import TodoListItem from './TodoListItem';
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
   const rowRenderer = useCallback(
-    ({ index, ket, style }) => {
+    ({ index, key, style }) => {
       const todo = todos[index];
       return (
         <TodoListItem

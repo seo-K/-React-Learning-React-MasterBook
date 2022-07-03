@@ -11,7 +11,7 @@ function App() {
         {
             id: 0,
             text: "My Favorite Music",
-            block: true,
+            block: false,
         },
         {
             id: 1,
