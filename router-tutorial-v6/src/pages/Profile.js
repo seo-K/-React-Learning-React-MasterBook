@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const data = {
     velopert: {
@@ -11,8 +12,10 @@ const data = {
     },
 };
 
-const Profile = ({ match }) => {
-    const { username } = match.params;
+const Profile = () => {
+    const { username } = useParams();
+    // console.log(username);
+
     const profile = data[username];
     if (!profile) {
         return <div>존재하지 않는 사용자입니다.</div>;
