@@ -1,51 +1,53 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Route, Routes, useRoutes, Link } from "react-router-dom";
-
-// pages
+import React from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Profile from "./pages/Profile";
+import Profiles from "./pages/Profiles";
+import HistorySample from "./pages/HistorySample";
 
-// const AboutList = () =>
-//     useRoutes([
-//         { path: "/home", element: <About /> },
-//         { path: "/users", element: <About /> },
-//         { path: "/widgets", element: <About /> },
-//     ]);
-
-function App() {
+const App = () => {
     return (
         <div>
             <ul>
                 <li>
-                    <Link to="/">HOME</Link>
+                    <Link to="/">홈</Link>
                 </li>
                 <li>
                     <Link to="/about">소개</Link>
                 </li>
                 <li>
-                    <Link to="/profile/velopert">veloper 프로필</Link>
+                    <Link to="/profiles">프로필</Link>
                 </li>
                 <li>
-                    <Link to="/profile/gildong">gildong 프로필</Link>
+                    <Link to="/history">History 예제</Link>
                 </li>
             </ul>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/profile/:username" element={<Profile />} />
-                {/* Rotue 하나에 여러개의 path 설정하가 */}
-                {/* 1) react Hooks 사용 찾는중 */}
-                {/* https://stackblitz.com/github/remix-run/react-router/tree/main/examples/multi-app?file=home%2FApp.jsx */}
-                {/* 2) map 사용 */}
-                {["/about", "/info", "/etc"].map((path, index) => (
-                    <Route path={path} element={<About />} key={index} />
-                ))}
-                {/* <Route path="/about" element={<About />} />
-            <Route path="/info" element={<About />} /> */}
-            </Routes>
+            <hr />
+            <Switch>
+                <Route path="/" component={Home} exact={true} />
+                <Route path={["/about", "/info"]} component={About} />
+                <Route path="/profiles" component={Profiles} />
+                <Route path="/history" component={HistorySample} />
+                {/* <Route path="/history" component={HistorySample} /> */}
+                {/* <Route
+          // path를 따로 정의하지 않으면 모든 상황에 렌더링됨
+          render={({ location }) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다:</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+        /> */}
+                <Route
+                    render={({ location }) => (
+                        <div>
+                            <h2>이 페이지는 존재하지 않습니다</h2>
+                        </div>
+                    )}
+                />
+            </Switch>
         </div>
     );
-}
+};
 
 export default App;
