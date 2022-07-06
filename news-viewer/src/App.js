@@ -5,7 +5,9 @@ import NewsPage from './pages/NewsPage';
 export default function App() {
     return (
         <Routes>
-            <Route path="/" element={<NewsPage />} />
+            <Route path="/" element={<NewsPage />}>
+                <Route path=":categroy" element={<NewsPage />} />
+            </Route>
         </Routes>
     );
 }
