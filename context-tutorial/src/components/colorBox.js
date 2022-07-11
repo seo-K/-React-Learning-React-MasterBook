@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import ColorContext from "../contexts/color";
 
+// useContext hook 사용하여 값을 받아오기
+
 const ColorBox = () => {
+    const { state } = useContext(ColorContext);
     return (
-        <ColorContext.Consumer>
-            {(value) => (
-                <div
-                    style={{
-                        width: "64px",
-                        height: "64px",
-                        background: value.color,
-                    }}
-                ></div>
-            )}
-        </ColorContext.Consumer>
+        <>
+            <div
+                style={{
+                    width: "64px",
+                    height: "64px",
+                    background: state.color,
+                }}
+            />
+            <div
+                style={{
+                    width: "32px",
+                    height: "32px",
+                    background: state.subcolor,
+                }}
+            />
+        </>
     );
 };
 

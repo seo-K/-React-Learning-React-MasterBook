@@ -1,16 +1,19 @@
 import React from "react";
+import SelectColors from "./components/SelectColors";
 import ColorBox from "./components/colorBox";
-import ColorContext from "./contexts/color";
+import { ColorProvider } from "./contexts/color";
 
 // Provider 사용하여 value 값 변경하기
+// Provider를 사용할때는 value 값을 명시해주어야 제대로 작동!
 
 const App = () => {
     return (
-        <ColorContext.Provider value={{ color: "red" }}>
+        <ColorProvider>
             <div>
+                <SelectColors />
                 <ColorBox />
             </div>
-        </ColorContext.Provider>
+        </ColorProvider>
     );
 };
 
