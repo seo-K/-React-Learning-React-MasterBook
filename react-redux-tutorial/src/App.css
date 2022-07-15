@@ -1,38 +1,322 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'HallymGothic-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+html,
+body {
+  width: 100%;
+  background-color: #fff;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Pop", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*보편적 스타일링 reset.css*/
+* {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html,
+body,
+div,
+span,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+address,
+pre,
+cite,
+form,
+fieldset,
+input,
+textarea,
+select,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  letter-spacing: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+fieldset,
+img,
+abbr,
+acronym {
+  border: 0 none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0 none;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  border: 0;
+}
+
+address,
+caption,
+strong,
+em,
+cite {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: """";
+}
+
+hr {
+  display: none;
+}
+
+/* HTML5 Boilerplate  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+img,
+video {
+  /*max-width:100%;*/
+  border: 0;
+  vertical-align: middle;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+dl {
+  list-style: none;
+}
+
+a {
+  display: block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+select,
+label {
+  vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  vertical-align: middle;
+  font-weight: normal;
+  letter-spacing: normal;
+  background: transparent;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+select {
+  -webkit-appearance: none;
+  /* 네이티브 외형 감추기*/
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: normal;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  color: #000000;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  letter-spacing: normal;
+  -webkit-tap-highlight-color: transparent;
+  color: #000;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+  color: #000;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+progress {
+  /* Reset the appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
 }
