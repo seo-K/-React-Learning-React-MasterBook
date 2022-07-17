@@ -42,15 +42,15 @@ const Todos = ({
     onToggle,
     onRemove,
 }) => {
-    const onSubimt = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
     };
     return (
         <div>
-            <from onSubimt={onSubimt}>
+            <form onSubmit={onSubmit}>
                 <input />
                 <button type="submit">등록</button>
-            </from>
+            </form>
             <div>
                 <TodoItems />
                 <TodoItems />

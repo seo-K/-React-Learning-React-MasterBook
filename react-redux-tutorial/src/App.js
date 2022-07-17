@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 import Counter from './components/Counter';
 import Todos from './components/Todos';
+import CounterContainer from './containers/CounterContainer';
 
 function App() {
     return (
         <ContentWrap>
             <div className="inner-wrap">
-                <Counter number={0} />
+                {/* <Counter number={0} /> */}
+                <CounterContainer/>
                 <hr />
                 <Todos />
             </div>
