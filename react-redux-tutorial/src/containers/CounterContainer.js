@@ -1,6 +1,11 @@
 import React from 'react';
 import Counter from '../components/Counter';
 import {connect} from 'react-redux';
+// 액션 생성 함수가 많아지면 사용하는 유틸함수
+import { bindActionCreators } from 'redux';
+
+// (2) 함수 내부 선언
+import {increase, decrease} from '../modules/counter'
 
 // 리덕스 스토어와 연동된 컴포넌트를 컨테이너 컴포넌트라고 부름.
 const CounterContainer = ({number,increase, decrease}) => {
@@ -12,23 +17,50 @@ const CounterContainer = ({number,increase, decrease}) => {
 // 1. mapStateToProps 함수는 state를 파라미터로 받아오며, 이 값은 현재 스토어가 지니고 있는 상태를 가리킴.
 // 2. mapDispatchToProps 함수는 store의 내장 함수 dispatch 를 파라미터로 받아옴..
 
-const mapStateToProps = state => ({
-    number : state.counter.number,
-})
 
-const mapDispatchToProps = dispatch => ({
-    // 임시 함수
-    increase: () => {
-         console.log(+1)
-        // dispatch(increase());
-    },
-    decrease: () => {
-        // dispatch(decrease())
-        console.log(-1)
-    }
-})
+// (1) 함수 외부 선언
+// const mapStateToProps = state => ({
+//     number : state.counter.number,
+// })
 
+// const mapDispatchToProps = dispatch => ({
+//     // 임시 함수
+//     increase: () => {
+//          console.log(+1)
+//         // dispatch(increase());
+//     },
+//     decrease: () => {
+//         // dispatch(decrease())
+//         console.log(-1)
+//     }
+// })
+
+// export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps,
+// )(CounterContainer)
+
+// (2) 함수 내부 선언
+// export default connect(
+//     state => ({
+//         number : state.counter.number,
+//     }),
+//     dispatch => ({
+//         increase: () => dispatch(increase()),
+//         decrease: () => dispatch(decrease()),
+//     }),
+// )(CounterContainer)
+
+// (3) bindActionCreator 사용 (액션 함수 많을 시 사용하는 유틸함수)
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+    state => ({
+        number : state.counter.number,
+    }),
+    dispatch => bindActionCreators(
+        {
+            increase,
+            decrease,
+        },
+        dispatch
+        ),
 )(CounterContainer)
