@@ -22,13 +22,26 @@ const TodoItems = ({ todo, onToggle, onRemove }) => {
                 <input
                     id="ListCheck"
                     type="checkbox"
-                    onChange={handleChange}
-                    value={isChecked}
+                    // onChange={handleChange}
+                    // value={isChecked}
+                    onClick={() => {
+                        onToggle(todo.id);
+                        console.log(todo.id);
+                    }}
+                    checked={todo.done}
+                    readOnly={true}
                 />
-                {isChecked ? <FiCheckSquare /> : <FiSquare />}
-                <label htmlFor="ListCheck">예제 텍스트</label>
+                {todo.done ? <FiCheckSquare /> : <FiSquare />}
+                <label
+                    htmlFor="ListCheck"
+                    style={{
+                        textDecoration: todo.done ? 'line-through' : 'none',
+                    }}
+                >
+                    {todo.text}
+                </label>
             </div>
-            <button className="del_btn">
+            <button className="del_btn" onClick={() => onRemove(todo.id)}>
                 <RiDeleteBinFill />
             </button>
         </Items>
@@ -44,23 +57,30 @@ const Todos = ({
 }) => {
     const onSubmit = (e) => {
         e.preventDefault();
+        onInsert(input);
+        onChangeInput(''); // 등록 후 인풋 초기화
     };
+
+    const onChange = (e) => onChangeInput(e.target.value);
+
     return (
         <div>
             <form onSubmit={onSubmit}>
                 <input />
-                <button type="submit">등록</button>
+                <button type="submit" onChange={onChange}>
+                    등록
+                </button>
             </form>
-            <div>
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-                <TodoItems />
-            </div>
+            <ul>
+                {todos.map((todo) => (
+                    <TodoItems
+                        todo={todo}
+                        key={todo.id}
+                        onToggle={onToggle}
+                        onRemove={onRemove}
+                    />
+                ))}
+            </ul>
         </div>
     );
 };
