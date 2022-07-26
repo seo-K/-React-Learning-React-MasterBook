@@ -1,13 +1,12 @@
-import { combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import counter from './counter';
 import todos from './todos';
-
 
 // combineReducers 리듀서를 여러개 만들지않고. 하나로 합쳐주는 유틸함수
 const rootReducer = combineReducers({
     counter,
-    todos
-})
+    todos,
+});
 
 export default rootReducer;
 

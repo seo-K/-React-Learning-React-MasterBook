@@ -5,35 +5,32 @@ import { FiCheckSquare, FiSquare } from 'react-icons/fi';
 import { RiDeleteBinFill } from 'react-icons/ri';
 
 const TodoItems = ({ todo, onToggle, onRemove }) => {
-    const [isChecked, setIsChecked] = useState(false);
+    // const [isChecked, setIsChecked] = useState(false);
 
-    const handleChange = (event) => {
-        if (event.target.checked) {
-            console.log('✅ Checkbox is checked');
-        } else {
-            console.log('⛔️ Checkbox is NOT checked');
-        }
-        setIsChecked((current) => !current);
-    };
+    // const handleChange = (event) => {
+    //     if (event.target.checked) {
+    //         console.log('✅ Checkbox is checked');
+    //     } else {
+    //         console.log('⛔️ Checkbox is NOT checked');
+    //     }
+    //     setIsChecked((current) => !current);
+    // };
 
     return (
         <Items>
             <div className="checkbox_wrap">
                 <input
-                    id="ListCheck"
+                    id={'ListCheck' + todo.id}
                     type="checkbox"
                     // onChange={handleChange}
                     // value={isChecked}
-                    onClick={() => {
-                        onToggle(todo.id);
-                        console.log(todo.id);
-                    }}
+                    onClick={() => onToggle(todo.id)}
                     checked={todo.done}
                     readOnly={true}
                 />
                 {todo.done ? <FiCheckSquare /> : <FiSquare />}
                 <label
-                    htmlFor="ListCheck"
+                    htmlFor={'ListCheck' + todo.id}
                     style={{
                         textDecoration: todo.done ? 'line-through' : 'none',
                     }}
@@ -67,10 +64,8 @@ const Todos = ({
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <input />
-                <button type="submit" onChange={onChange}>
-                    등록
-                </button>
+                <input value={input} onChange={onChange} />
+                <button type="submit">등록</button>
             </form>
             <ul>
                 {todos.map((todo) => (
