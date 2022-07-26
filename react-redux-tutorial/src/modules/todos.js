@@ -44,6 +44,11 @@ const initialState = {
             text: '리액트와 리덕스 사용하기',
             done: false,
         },
+        {
+            id: 3,
+            text: '복습하기',
+            done: false,
+        },
     ],
 };
 

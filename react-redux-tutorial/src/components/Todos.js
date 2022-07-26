@@ -39,6 +39,7 @@ const TodoItems = ({ todo, onToggle, onRemove }) => {
                     }}
                 >
                     {todo.text}
+                    {todo.id}
                 </label>
             </div>
             <button className="del_btn" onClick={() => onRemove(todo.id)}>
